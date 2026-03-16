@@ -1,63 +1,43 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments, faPencilRuler, faCube, faHammer, faKey } from '@fortawesome/free-solid-svg-icons';
+import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 const steps = [
-  '01 Consultation',
-  '02 Concept Design',
-  '03 3D Visualisation',
-  '04 Execution',
-  '05 Handover',
+  { num: '01', title: 'Consultation', desc: 'We listen to your needs and vision.', icon: faComments },
+  { num: '02', title: 'Concept Design', desc: 'Initial sketches and direction.', icon: faPencilRuler },
+  { num: '03', title: '3D Visualisation', desc: 'Photorealistic renders for approval.', icon: faCube },
+  { num: '04', title: 'Execution', desc: 'Skilled on-site implementation.', icon: faHammer },
+  { num: '05', title: 'Handover', desc: 'Final walkthrough and keys.', icon: faKey },
 ];
 
 export default function Process() {
-  const { ref, hasRevealed } = useScrollReveal(0.15);
-
   return (
-    <section id="process" ref={ref} className="bg-cream py-20">
+    <section id="process" className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={hasRevealed ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
-        >
-          <div className="mx-auto h-0.5 w-12 bg-gold" />
-          <p
-            className="mt-4 font-montserrat text-[10px] uppercase tracking-[5px] text-gold"
-            style={{ letterSpacing: '5px' }}
-          >
-            How We Work
-          </p>
-          <h2 className="mt-2 font-playfair text-3xl text-dark md:text-4xl">
+        <AnimateOnScroll delay={0}>
+          <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.2em] text-gold">HOW WE WORK</p>
+          <h2 className="mt-2 font-playfair text-3xl font-semibold text-textDark md:text-4xl">
             Our <span className="italic text-gold">Process</span>
           </h2>
-        </motion.div>
-
-        <div className="relative">
-          {/* Connecting line */}
-          <div className="absolute left-0 right-0 top-[39px] hidden h-px bg-gold/50 md:block" />
-
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step}
-                initial={{ opacity: 0, y: 24 }}
-                animate={hasRevealed ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex flex-col items-center text-center"
-              >
-                <motion.div
-                  className="relative z-10 flex h-[78px] w-[78px] flex-shrink-0 items-center justify-center rounded-full border-2 border-gold font-playfair text-lg font-semibold text-gold transition-colors hover:bg-gold hover:text-dark"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {step.split(' ')[0]}
-                </motion.div>
-                <p className="mt-4 font-montserrat text-xs uppercase tracking-wider text-taupe">
-                  {step.split(' ').slice(1).join(' ')}
-                </p>
-              </motion.div>
+        </AnimateOnScroll>
+        <div className="relative mt-16">
+          <div className="absolute left-0 right-0 top-5 hidden border-t-2 border-dashed border-gold md:block" />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-5">
+            {steps.map((s, i) => (
+              <AnimateOnScroll key={s.num} delay={i * 0.15}>
+                <div className="relative z-10 rounded-card border border-border bg-white p-6 text-center transition-all duration-350 hover:-translate-y-1 hover:border-gold hover:shadow-gold-soft">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-gold font-playfair text-sm font-bold text-white">
+                    {s.num}
+                  </div>
+                  <div className="mt-3 flex justify-center text-gold">
+                    <FontAwesomeIcon icon={s.icon} className="text-2xl" />
+                  </div>
+                  <h3 className="mt-2 font-playfair text-lg font-bold text-textDark">{s.title}</h3>
+                  <p className="mt-1 text-sm text-textBody">{s.desc}</p>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>

@@ -3,72 +3,53 @@
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faInstagram,
-  faFacebookF,
-  faPinterestP,
-  faLinkedinIn,
-  faWhatsapp,
-} from '@fortawesome/free-brands-svg-icons';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-const services = [
-  'Architectural Design',
-  'Interior Design',
-  'Retail Design',
-  'Residential Design',
-];
-const sectors = ['Residential', 'Commercial', 'Retail', 'Hospitality'];
-const company = ['About', 'Projects', 'Process', 'Contact'];
-
-const socials = [
-  { icon: faInstagram, href: '#', label: 'Instagram' },
-  { icon: faFacebookF, href: '#', label: 'Facebook' },
-  { icon: faPinterestP, href: '#', label: 'Pinterest' },
-  { icon: faLinkedinIn, href: '#', label: 'LinkedIn' },
-  { icon: faWhatsapp, href: '#', label: 'WhatsApp' },
-];
+const floorings = ['SPC Flooring', 'Wooden Flooring', 'Vinyl Flooring', 'Sports Flooring', 'Kids EVA Flooring', 'Carpet Tiles', 'Artificial Grass'];
+const blinds = ['Roller Blinds', 'Vertical Blinds', 'Wooden Blinds', 'Venetian Blinds', 'Zebra Blinds', 'Chick Blinds'];
+const wallCoverings = ['PVC Wall Panels', 'Fluted Panels (WPC)', 'Acoustic Panels', 'PU Stone Panels', 'UV Marble Sheet'];
+const company = ['About', 'Services', 'Projects', 'Process', 'Contact'];
+const servicesSub = ['Interior Design', 'Architectural Design', 'Retail Design', 'Residential Design'];
 
 export default function Footer() {
   return (
-    <footer className="bg-dark2 border-t border-gold/20">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+    <footer className="border-t-2 border-gold bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+          {/* Column 1: Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block" aria-label="Elevé Interiors">
-              <Logo height={82} align="left" />
+              <Logo align="left" variant="light" />
             </Link>
-            <p className="mt-4 font-cormorant text-sm text-taupe2">
-              Crafting environments that reflect your vision. Luxury interior
-              design, architecture & construction.
+            <p className="mt-4 font-cormorant text-sm text-textBody">
+              Crafting environments that reflect your vision.
             </p>
-            <div className="mt-6 flex gap-4">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center border border-gold/50 text-taupe2 transition-colors hover:border-gold hover:text-gold"
-                >
-                  <FontAwesomeIcon icon={s.icon} className="text-sm" />
-                </a>
-              ))}
+            <p className="mt-2 flex items-start gap-2 text-xs text-textBody">
+              <span className="mt-0.5">📍</span>
+              Office No. 09, 3rd Floor, United Plaza, Fazl-e-Haq Road, Blue Area, Islamabad
+            </p>
+            <p className="mt-1 text-xs text-textBody">
+              <a href="tel:+923001234567" className="hover:text-gold">+92 300 1234567</a>
+              {' · '}
+              <a href="mailto:hello@eleveinteriors.com" className="hover:text-gold">hello@eleveinteriors.com</a>
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="Facebook">
+                <FontAwesomeIcon icon={faFacebookF} className="text-sm" />
+              </a>
+              <a href="https://www.instagram.com/eleveinteriors" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="Instagram">
+                <FontAwesomeIcon icon={faInstagram} className="text-sm" />
+              </a>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Column 2: Floorings */}
           <div>
-            <h3 className="font-montserrat text-xs uppercase tracking-[3px] text-gold">
-              Services
-            </h3>
+            <h3 className="font-montserrat text-xs font-semibold uppercase tracking-[0.1em] text-gold">Floorings</h3>
             <ul className="mt-4 space-y-2">
-              {services.map((name) => (
+              {floorings.map((name) => (
                 <li key={name}>
-                  <Link
-                    href="#services"
-                    className="font-cormorant text-taupe2 transition-colors hover:text-gold"
-                  >
+                  <Link href="#products" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>
@@ -76,18 +57,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Sectors */}
+          {/* Column 3: Window Blinds */}
           <div>
-            <h3 className="font-montserrat text-xs uppercase tracking-[3px] text-gold">
-              Sectors
-            </h3>
+            <h3 className="font-montserrat text-xs font-semibold uppercase tracking-[0.1em] text-gold">Window Blinds</h3>
             <ul className="mt-4 space-y-2">
-              {sectors.map((name) => (
+              {blinds.map((name) => (
                 <li key={name}>
-                  <Link
-                    href="#projects"
-                    className="font-cormorant text-taupe2 transition-colors hover:text-gold"
-                  >
+                  <Link href="#products" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>
@@ -95,18 +71,37 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Column 4: Wall Coverings */}
           <div>
-            <h3 className="font-montserrat text-xs uppercase tracking-[3px] text-gold">
-              Company
-            </h3>
+            <h3 className="font-montserrat text-xs font-semibold uppercase tracking-[0.1em] text-gold">Wall Coverings</h3>
+            <ul className="mt-4 space-y-2">
+              {wallCoverings.map((name) => (
+                <li key={name}>
+                  <Link href="#products" className="text-sm text-textBody transition-colors hover:text-gold">
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5: Company */}
+          <div>
+            <h3 className="font-montserrat text-xs font-semibold uppercase tracking-[0.1em] text-gold">Company</h3>
             <ul className="mt-4 space-y-2">
               {company.map((name) => (
                 <li key={name}>
-                  <Link
-                    href={`#${name.toLowerCase()}`}
-                    className="font-cormorant text-taupe2 transition-colors hover:text-gold"
-                  >
+                  <Link href={`#${name.toLowerCase()}`} className="text-sm text-textBody transition-colors hover:text-gold">
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 font-montserrat text-xs font-semibold uppercase tracking-wider text-gold">Services</p>
+            <ul className="mt-2 space-y-1">
+              {servicesSub.map((name) => (
+                <li key={name}>
+                  <Link href="#services" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>
@@ -115,19 +110,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between border-t border-gold/20 pt-8 md:flex-row">
-          <p className="font-montserrat text-xs text-taupe">
-            © {new Date().getFullYear()} Elevé Interiors. All rights reserved.
-          </p>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=United+Plaza+Fazl-e-Haq+Road+Blue+Area+Islamabad"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-2 font-montserrat text-xs text-taupe transition-colors hover:text-gold md:mt-0"
-          >
-            <FontAwesomeIcon icon={faLocationDot} className="text-gold" />
-            Office No. 09, 3rd Floor, United Plaza, Fazl-e-Haq Road, Blue Area, Islamabad
-          </a>
+        <div className="mt-12 border-t border-border bg-bgLight px-6 py-4 -mx-6 -mb-6">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 md:flex-row">
+            <p className="text-[0.85rem] text-textBody">
+              © {new Date().getFullYear()} Elevé Interiors. All rights reserved.
+            </p>
+            <p className="text-[0.85rem] text-textBody">Islamabad, Pakistan</p>
+          </div>
         </div>
       </div>
     </footer>

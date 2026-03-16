@@ -49,7 +49,7 @@ export default function Contact() {
         >
           <div className="mx-auto h-0.5 w-12 bg-gold" />
           <p
-            className="mt-4 font-montserrat text-[10px] uppercase tracking-[5px] text-gold"
+            className="mt-4 font-montserrat text-xs uppercase tracking-[5px] text-gold"
             style={{ letterSpacing: '5px' }}
           >
             Get in Touch

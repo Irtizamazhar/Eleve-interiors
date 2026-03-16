@@ -3,34 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --gold: #C9A84C;
-  --cream: #F4ECD8;
-  --dark: #1C1917;
-  --taupe: #A08B70;
+  --white: #ffffff;
+  --bg-light: #f8f6f2;
+  --bg-dark: #1a1a1a;
+  --text-dark: #1a1a1a;
+  --text-body: #555555;
+  --text-muted: #999999;
+  --gold: #c9a84c;
+  --gold-hover: #b8962e;
+  --border: #e5e0d5;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
+  --radius: 10px;
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
   scroll-behavior: smooth;
+  /* Hide scrollbar, keep scrolling */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  @apply bg-dark text-cream antialiased;
+  background-color: var(--white);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Navbar logo - always visible on dark background */
-.nav-logo {
-  filter: brightness(1.8) contrast(1.1);
-}
+/* Logo on light background — dark text */
+.logo-light .logo-eleve { color: var(--text-dark) !important; }
+.logo-light .logo-interiors { color: var(--text-muted) !important; }
 
-/* Footer logo - same visibility */
-.footer-logo {
-  filter: brightness(1.8) contrast(1.1);
-}
+/* Logo on dark background — light text */
+.logo-dark .logo-eleve { color: #f4ecd8 !important; }
+.logo-dark .logo-interiors { color: #c8b090 !important; }
 
-/* Navbar text — no doubling: crisp single-stroke rendering */
 .nav-link {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   text-shadow: none;
+}
+
+/* Trusted clients scroll */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+/* WhatsApp pulse */
+@keyframes pulse-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }

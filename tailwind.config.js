@@ -7,20 +7,47 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: '#1C1917',
-        dark2: '#252220',
-        mid: '#2C2824',
-        gold: '#C9A84C',
-        gold2: '#E2C06A',
-        gold3: '#8B6510',
-        cream: '#F4ECD8',
-        taupe: '#A08B70',
-        taupe2: '#C8B090',
+        white: '#ffffff',
+        bgLight: '#f8f6f2',
+        bgDark: '#1a1a1a',
+        textDark: '#1a1a1a',
+        textBody: '#555555',
+        textMuted: '#999999',
+        gold: '#c9a84c',
+        goldHover: '#b8962e',
+        border: '#e5e0d5',
+        whatsapp: '#25d366',
+        dark: '#1a1a1a',
+        dark2: '#111111',
+      },
+      boxShadow: {
+        card: '0 4px 24px rgba(0,0,0,0.08)',
+        'card-hover': '0 12px 40px rgba(0,0,0,0.15)',
+        'gold-hover': '0 12px 40px rgba(201,168,76,0.12)',
+        'gold-soft': '0 8px 30px rgba(201,168,76,0.15)',
+        nav: '0 2px 20px rgba(0,0,0,0.10)',
+      },
+      borderRadius: {
+        card: '10px',
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],
         cormorant: ['var(--font-cormorant)', 'serif'],
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
+      },
+      animation: {
+        scroll: 'scroll 20s linear infinite',
+        'pulse-whatsapp': 'pulse-whatsapp 2s ease-in-out infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'pulse-whatsapp': {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(37, 211, 102, 0.5)' },
+          '70%': { boxShadow: '0 0 0 16px rgba(37, 211, 102, 0)' },
+        },
       },
     },
   },
