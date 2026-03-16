@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --cream: #F4ECD8;
+  --dark: #1C1917;
+  --taupe: #A08B70;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark text-cream antialiased;
+}
+
+/* Navbar logo - always visible on dark background */
+.nav-logo {
+  filter: brightness(1.8) contrast(1.1);
+}
+
+/* Footer logo - same visibility */
+.footer-logo {
+  filter: brightness(1.8) contrast(1.1);
+}
+
+/* Navbar text — no doubling: crisp single-stroke rendering */
+.nav-link {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: none;
+}
