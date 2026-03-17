@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
             ))}
           </ul>
           <a
-            href="tel:+923001234567"
+            href="tel:+923343893891"
             className="mt-8 inline-block rounded-md bg-gold px-6 py-3 font-montserrat text-sm font-medium text-white transition-all duration-300 hover:bg-goldHover hover:scale-[1.03]"
           >
             Call Us Now → +92 300 1234567

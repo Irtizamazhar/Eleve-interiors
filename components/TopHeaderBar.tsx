@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 export default function TopHeaderBar() {
   return (
@@ -20,13 +19,22 @@ export default function TopHeaderBar() {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="tel:+923001234567"
+            href="tel:+923343893891"
             className="hidden text-sm text-gold transition-colors hover:text-goldHover md:inline"
           >
-            +92 300 1234567
+            +92 334 3893891
           </a>
           <a
-            href="https://www.facebook.com"
+            href="https://www.linkedin.com/company/112252855"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white transition-colors hover:text-gold"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} className="text-sm" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100064059482388"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white transition-colors hover:text-gold"
@@ -35,7 +43,7 @@ export default function TopHeaderBar() {
             <FontAwesomeIcon icon={faFacebookF} className="text-sm" />
           </a>
           <a
-            href="https://www.instagram.com/eleveinteriors"
+            href="https://www.instagram.com/ladybugstudio2020"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white transition-colors hover:text-gold"

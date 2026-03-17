@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const floorings = ['SPC Flooring', 'Wooden Flooring', 'Vinyl Flooring', 'Sports Flooring', 'Kids EVA Flooring', 'Carpet Tiles', 'Artificial Grass'];
 const blinds = ['Roller Blinds', 'Vertical Blinds', 'Wooden Blinds', 'Venetian Blinds', 'Zebra Blinds', 'Chick Blinds'];
@@ -29,15 +29,18 @@ export default function Footer() {
               Office No. 09, 3rd Floor, United Plaza, Fazl-e-Haq Road, Blue Area, Islamabad
             </p>
             <p className="mt-1 text-xs text-textBody">
-              <a href="tel:+923001234567" className="hover:text-gold">+92 300 1234567</a>
+              <a href="tel:+923343893891" className="hover:text-gold">+92 334 3893891</a>
               {' · '}
               <a href="mailto:hello@eleveinteriors.com" className="hover:text-gold">hello@eleveinteriors.com</a>
             </p>
             <div className="mt-6 flex gap-3">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="Facebook">
+              <a href="https://www.linkedin.com/company/112252855" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="LinkedIn">
+                <FontAwesomeIcon icon={faLinkedinIn} className="text-sm" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100064059482388" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebookF} className="text-sm" />
               </a>
-              <a href="https://www.instagram.com/eleveinteriors" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="Instagram">
+              <a href="https://www.instagram.com/ladybugstudio2020" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-textDark transition-colors hover:border-gold hover:text-gold" aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} className="text-sm" />
               </a>
             </div>

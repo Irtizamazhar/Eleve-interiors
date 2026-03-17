@@ -93,7 +93,7 @@ export default function Contact() {
                 <p className="font-montserrat text-xs uppercase tracking-wider text-gold">
                   Phone
                 </p>
-                <p className="font-cormorant text-taupe">+92 300 1234567</p>
+                <a href="tel:+923343893891" className="font-cormorant text-taupe hover:text-gold">+92 334 3893891</a>
               </div>
             </div>
             <div className="flex gap-4">
@@ -109,7 +109,7 @@ export default function Contact() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-4">
+            <a href="https://www.instagram.com/ladybugstudio2020" target="_blank" rel="noopener noreferrer" className="flex gap-4 transition-opacity hover:opacity-80">
               <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-gold">
                 <FontAwesomeIcon icon={faInstagramBrand} className="text-gold" />
               </div>
@@ -117,9 +117,9 @@ export default function Contact() {
                 <p className="font-montserrat text-xs uppercase tracking-wider text-gold">
                   Instagram
                 </p>
-                <p className="font-cormorant text-taupe">@eleveinteriors</p>
+                <p className="font-cormorant text-taupe">@ladybugstudio2020</p>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Right: Form */}

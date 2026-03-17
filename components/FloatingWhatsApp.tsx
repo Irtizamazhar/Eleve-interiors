@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/923001234567"
+      href="https://wa.me/923343893891"
       target="_blank"
       rel="noopener noreferrer"
       className="group fixed bottom-20 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform hover:scale-105 md:bottom-7 md:right-7 md:h-[58px] md:w-[58px]"

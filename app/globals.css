@@ -23,6 +23,8 @@ html {
   /* Hide scrollbar, keep scrolling */
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 html::-webkit-scrollbar {
@@ -34,6 +36,10 @@ body {
   color: var(--text-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+  overscroll-behavior-x: none;
 }
 
 /* Logo on light background — dark text */
