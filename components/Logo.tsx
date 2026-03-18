@@ -37,7 +37,7 @@ export default function Logo({ className = '', align = 'center', variant = 'ligh
         <img
           src="/logo.png"
           alt="Elevé Interiors"
-          className={height != null ? 'w-auto object-contain' : 'h-[52px] w-auto object-contain md:h-[72px]'}
+          className={height != null ? 'w-auto object-contain' : 'h-[56px] w-auto object-contain md:h-[80px]'}
           style={height != null ? { height: `${height}px` } : undefined}
           onError={() => setImgError(true)}
         />

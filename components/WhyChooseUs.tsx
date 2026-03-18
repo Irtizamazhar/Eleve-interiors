@@ -61,7 +61,11 @@ export default function WhyChooseUs() {
         </AnimateOnScroll>
         <AnimateOnScroll direction="right" delay={0.1}>
           <div className="relative">
-            <div className="absolute -left-3 -top-3 z-10 h-full w-full border-[3px] border-gold" style={{ borderRadius: 2 }} />
+            <div
+              className="absolute z-10 border-[3px] border-gold"
+              style={{ inset: '-12px', borderRadius: 2 }}
+              aria-hidden
+            />
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"

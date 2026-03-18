@@ -39,6 +39,11 @@ export default function About() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 lg:grid-cols-[0.45fr_0.55fr] lg:gap-16">
         <AnimateOnScroll direction="left" delay={0}>
           <div className="relative">
+            <div
+              className="pointer-events-none absolute z-10 border-[3px] border-gold"
+              style={{ top: -12, left: -12, right: -12, bottom: -24, borderRadius: 6 }}
+              aria-hidden
+            />
             <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
               <Image
                 src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
@@ -48,12 +53,8 @@ export default function About() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 unoptimized
               />
-              <div className="absolute left-0 top-0 h-12 w-12 border-l-2 border-t-2 border-gold" />
-              <div className="absolute right-0 top-0 h-12 w-12 border-r-2 border-t-2 border-gold" />
-              <div className="absolute bottom-0 left-0 h-12 w-12 border-b-2 border-l-2 border-gold" />
-              <div className="absolute bottom-0 right-0 h-12 w-12 border-b-2 border-r-2 border-gold" />
             </div>
-            <div className="absolute -bottom-3 right-6 flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-gold bg-bgDark p-2 text-center shadow-lg md:-bottom-4 md:right-8 md:h-28 md:w-28">
+            <div className="absolute -bottom-3 right-6 z-20 flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-gold bg-bgDark p-2 text-center shadow-lg md:-bottom-4 md:right-8 md:h-28 md:w-28">
               <span className="font-playfair text-xl font-semibold leading-tight text-gold md:text-2xl">10+</span>
               <span className="mt-0.5 font-montserrat text-[7px] uppercase leading-tight tracking-wider text-white/80 md:text-[7px]">
                 Years of Excellence
