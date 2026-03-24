@@ -20,7 +20,7 @@ export default function TrustedClients() {
           <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.2em] text-gold">HUGE HONOR</p>
           <h2 className="mt-2 font-playfair text-3xl font-semibold text-textDark md:text-4xl">Trusted By Leading Brands</h2>
         </AnimateOnScroll>
-        <div className="mt-12 overflow-hidden">
+        <div className="mt-10 overflow-hidden md:mt-12">
           <div
             className="logo-track flex w-max gap-4"
             style={{ animation: 'scroll 20s linear infinite' }}
@@ -28,9 +28,9 @@ export default function TrustedClients() {
             {duplicated.map((name, i) => (
               <div
                 key={`${name}-${i}`}
-                className="flex h-20 min-w-[180px] items-center justify-center rounded-lg border border-border bg-white px-8 py-4 transition-all duration-300 hover:scale-105 hover:border-gold hover:grayscale-0 grayscale"
+                className="flex h-16 min-w-[150px] items-center justify-center rounded-lg border border-border bg-white px-5 py-3 transition-all duration-300 hover:scale-105 hover:border-gold hover:grayscale-0 grayscale sm:h-20 sm:min-w-[180px] sm:px-8 sm:py-4"
               >
-                <span className="font-playfair text-lg font-bold tracking-wide text-textBody transition-colors hover:text-textDark">
+                <span className="font-playfair text-base font-bold tracking-wide text-textBody transition-colors hover:text-textDark sm:text-lg">
                   {name}
                 </span>
               </div>

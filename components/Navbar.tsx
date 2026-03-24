@@ -11,46 +11,46 @@ const productsMega = {
   wallCoverings: {
     title: 'Wall Coverings',
     links: [
-      { label: 'PVC Wall Panels', href: '/#wall-coverings' },
-      { label: 'Fluted Panels (WPC)', href: '/#wall-coverings' },
-      { label: 'Acoustic Panels', href: '/#wall-coverings' },
-      { label: 'PU Stone Panels', href: '/#wall-coverings' },
-      { label: 'UV Marble Sheets', href: '/#wall-coverings' },
+      { label: 'PVC Wall Panels', href: '/products#wall-coverings' },
+      { label: 'Fluted Panels (WPC)', href: '/products#wall-coverings' },
+      { label: 'Acoustic Panels', href: '/products#wall-coverings' },
+      { label: 'PU Stone Panels', href: '/products#wall-coverings' },
+      { label: 'UV Marble Sheets', href: '/products#wall-coverings' },
     ],
   },
   windowBlinds: {
     title: 'Window Blinds',
     links: [
-      { label: 'Roller Blinds', href: '/#window-blinds' },
-      { label: 'Vertical Blinds', href: '/#window-blinds' },
-      { label: 'Wooden Blinds', href: '/#window-blinds' },
-      { label: 'Venetian Blinds', href: '/#window-blinds' },
-      { label: 'Zebra Blinds', href: '/#window-blinds' },
-      { label: 'Chick Blinds', href: '/#window-blinds' },
+      { label: 'Roller Blinds', href: '/products#window-blinds' },
+      { label: 'Vertical Blinds', href: '/products#window-blinds' },
+      { label: 'Wooden Blinds', href: '/products#window-blinds' },
+      { label: 'Venetian Blinds', href: '/products#window-blinds' },
+      { label: 'Zebra Blinds', href: '/products#window-blinds' },
+      { label: 'Chick Blinds', href: '/products#window-blinds' },
     ],
   },
   floorings: {
     title: 'Floorings',
     links: [
-      { label: 'SPC Flooring', href: '/#floorings' },
-      { label: 'Wooden Flooring', href: '/#floorings' },
-      { label: 'Vinyl Flooring', href: '/#floorings' },
-      { label: 'Epoxy Flooring', href: '/#floorings' },
-      { label: 'Artificial Grass', href: '/#floorings' },
-      { label: 'Carpet Tiles', href: '/#floorings' },
-      { label: 'Sports Flooring', href: '/#floorings' },
-      { label: 'Gym Flooring', href: '/#floorings' },
+      { label: 'SPC Flooring', href: '/products#floorings' },
+      { label: 'Wooden Flooring', href: '/products#floorings' },
+      { label: 'Vinyl Flooring', href: '/products#floorings' },
+      { label: 'Epoxy Flooring', href: '/products#floorings' },
+      { label: 'Artificial Grass', href: '/products#floorings' },
+      { label: 'Carpet Tiles', href: '/products#floorings' },
+      { label: 'Sports Flooring', href: '/products#floorings' },
+      { label: 'Gym Flooring', href: '/products#floorings' },
     ],
   },
 };
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#process', label: 'Process' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/process', label: 'Process' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -68,12 +68,17 @@ export default function Navbar() {
     <>
       <header
         className={`fixed left-0 right-0 z-[1000] border-b border-border bg-white transition-all duration-300 ${
-          scrolled ? 'top-0 shadow-nav' : 'top-10'
+          scrolled ? 'top-0 shadow-nav' : 'top-0 md:top-10'
         }`}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 md:px-6 md:py-4">
           <Link href="/" className="flex-shrink-0" aria-label="Elevé Interiors">
-            <Logo align="left" variant="light" />
+            <span className="block md:hidden">
+              <Logo align="left" variant="light" height={72} />
+            </span>
+            <span className="hidden md:block">
+              <Logo align="left" variant="light" height={96} />
+            </span>
           </Link>
 
           <div className="hidden items-center gap-8 xl:flex">
@@ -179,7 +184,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contact"
               className="rounded-md bg-gold px-5 py-2.5 font-medium text-white transition-all duration-300 hover:bg-goldHover hover:scale-[1.03]"
             >
               Get Consultation
@@ -222,7 +227,7 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="#products"
+                href="/products"
                 className="font-medium text-textDark hover:text-gold"
                 onClick={() => setMenuOpen(false)}
               >
@@ -239,7 +244,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href="/contact"
                 className="inline-block rounded-md bg-gold px-6 py-3 text-center font-medium text-white hover:bg-goldHover"
                 onClick={() => setMenuOpen(false)}
               >

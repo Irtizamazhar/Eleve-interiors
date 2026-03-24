@@ -9,7 +9,7 @@ const words = ['Spaces', 'That', 'Define', 'You'];
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-bgDark pt-[160px]">
+    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-bgDark pt-32 md:pt-[160px]">
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80"
@@ -29,17 +29,17 @@ export default function Hero() {
         />
       </div>
 
-      <div className="pointer-events-none absolute left-0 top-0 z-[2] h-20 w-20 border-l-2 border-t-2 border-gold" />
-      <div className="pointer-events-none absolute right-0 top-0 z-[2] h-20 w-20 border-r-2 border-t-2 border-gold" />
-      <div className="pointer-events-none absolute bottom-0 left-0 z-[2] h-20 w-20 border-b-2 border-l-2 border-gold" />
-      <div className="pointer-events-none absolute bottom-0 right-0 z-[2] h-20 w-20 border-b-2 border-r-2 border-gold" />
+      <div className="pointer-events-none absolute left-0 top-0 z-[2] h-12 w-12 border-l-2 border-t-2 border-gold md:h-20 md:w-20" />
+      <div className="pointer-events-none absolute right-0 top-0 z-[2] h-12 w-12 border-r-2 border-t-2 border-gold md:h-20 md:w-20" />
+      <div className="pointer-events-none absolute bottom-0 left-0 z-[2] h-12 w-12 border-b-2 border-l-2 border-gold md:h-20 md:w-20" />
+      <div className="pointer-events-none absolute bottom-0 right-0 z-[2] h-12 w-12 border-b-2 border-r-2 border-gold md:h-20 md:w-20" />
 
-      <div className="relative z-[2] mx-auto max-w-6xl px-6 text-center">
+      <div className="relative z-[2] mx-auto max-w-6xl px-4 text-center sm:px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="font-montserrat text-xs font-semibold uppercase tracking-[0.2em] md:text-sm"
+          className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] sm:text-xs sm:tracking-[0.2em] md:text-sm"
           style={{ color: 'var(--gold)', textShadow: '0 1px 2px rgba(0,0,0,0.85), 0 0 14px rgba(0,0,0,0.55)' }}
         >
           INTERIOR DESIGN · ARCHITECTURE · CONSTRUCTION
@@ -85,17 +85,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
           <Link
             href="#projects"
-            className="rounded-md bg-gold px-8 py-3 font-montserrat text-sm font-medium uppercase tracking-wider text-white transition-all duration-300 hover:scale-[1.03] hover:bg-goldHover"
+            className="w-full max-w-[290px] rounded-md bg-gold px-6 py-3 text-center font-montserrat text-sm font-medium uppercase tracking-wider text-white transition-all duration-300 hover:scale-[1.03] hover:bg-goldHover sm:w-auto sm:px-8"
           >
             Explore Our Work
           </Link>
           <Link
             href="#contact"
-            className="rounded-md border-2 border-white px-8 py-3 font-montserrat text-sm uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-textDark"
+            className="w-full max-w-[290px] rounded-md border-2 border-white px-6 py-3 text-center font-montserrat text-sm uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-textDark sm:w-auto sm:px-8"
           >
             Book Free Consultation
           </Link>

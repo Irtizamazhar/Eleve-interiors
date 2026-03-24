@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   title: 'Elevé Interiors – Luxury Interior Design',
   description:
     'Premium interior design, architecture & construction in Rawalpindi & Islamabad',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

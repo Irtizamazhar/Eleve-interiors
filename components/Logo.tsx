@@ -13,17 +13,18 @@ interface LogoProps {
 export default function Logo({ className = '', align = 'center', variant = 'light', height }: LogoProps) {
   const [imgError, setImgError] = useState(false);
   const isDark = variant === 'dark';
-  const containerClass = 'flex items-center justify-center';
+  const containerClass = 'flex flex-col items-center justify-center';
+  const variantClass = isDark ? 'logo-dark' : 'logo-light';
 
   if (imgError) {
     return (
       <div
-        className={`flex items-center ${align === 'left' ? 'justify-start' : 'justify-center'} ${className}`}
+        className={`flex items-center ${align === 'left' ? 'justify-start' : 'justify-center'} ${variantClass} ${className}`}
       >
         <span
           className={`font-playfair text-xl font-semibold italic md:text-2xl ${isDark ? 'text-white' : 'text-textDark'}`}
         >
-          <span className="text-gold">Elevé</span> Interiors
+          <span className="text-gold">Elevé</span>
         </span>
       </div>
     );
@@ -31,7 +32,7 @@ export default function Logo({ className = '', align = 'center', variant = 'ligh
 
   return (
     <div
-      className={`flex items-center ${align === 'left' ? 'justify-start' : 'justify-center'} ${className}`}
+      className={`flex items-center ${align === 'left' ? 'justify-start' : 'justify-center'} ${variantClass} ${className}`}
     >
       <div className={containerClass}>
         <img

@@ -79,7 +79,7 @@ export default function Contact() {
                   href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-cormorant text-taupe transition-colors hover:text-gold hover:underline"
+                  className="font-montserrat text-sm font-medium text-textBody transition-colors hover:text-gold hover:underline"
                 >
                   Office No. 09, 3rd Floor, United Plaza, Fazl-e-Haq Road, Blue Area, Islamabad
                 </a>
@@ -93,7 +93,7 @@ export default function Contact() {
                 <p className="font-montserrat text-xs uppercase tracking-wider text-gold">
                   Phone
                 </p>
-                <a href="tel:+923343893891" className="font-cormorant text-taupe hover:text-gold">+92 334 3893891</a>
+                <a href="tel:+923343893891" className="font-montserrat text-sm font-medium text-textBody hover:text-gold">+92 334 3893891</a>
               </div>
             </div>
             <div className="flex gap-4">
@@ -104,7 +104,7 @@ export default function Contact() {
                 <p className="font-montserrat text-xs uppercase tracking-wider text-gold">
                   Email
                 </p>
-                <p className="font-cormorant text-taupe">
+                <p className="font-montserrat text-sm font-medium text-textBody">
                   hello@eleveinteriors.com
                 </p>
               </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                 <p className="font-montserrat text-xs uppercase tracking-wider text-gold">
                   Instagram
                 </p>
-                <p className="font-cormorant text-taupe">@ladybugstudio2020</p>
+                <p className="font-montserrat text-sm font-medium text-textBody">@ladybugstudio2020</p>
               </div>
             </a>
           </div>
@@ -133,18 +133,18 @@ export default function Contact() {
                 <p className="font-playfair text-2xl text-dark">
                   Enquiry Sent!
                 </p>
-                <p className="mt-2 font-cormorant text-taupe">
+                <p className="mt-2 font-montserrat text-textBody">
                   We will get back to you shortly.
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="border-b border-gold/50 bg-transparent">
                     <input
                       type="text"
                       placeholder="First Name"
-                      className="w-full border-0 bg-transparent py-3 font-cormorant text-dark placeholder:text-taupe/70 focus:outline-none focus:ring-0"
+                      className="w-full border-0 bg-transparent py-3 font-montserrat font-medium text-textDark placeholder:font-montserrat placeholder:font-medium placeholder:text-textMuted focus:outline-none focus:ring-0"
                       required
                     />
                   </div>
@@ -152,7 +152,7 @@ export default function Contact() {
                     <input
                       type="text"
                       placeholder="Last Name"
-                      className="w-full border-0 bg-transparent py-3 font-cormorant text-dark placeholder:text-taupe/70 focus:outline-none focus:ring-0"
+                      className="w-full border-0 bg-transparent py-3 font-montserrat font-medium text-textDark placeholder:font-montserrat placeholder:font-medium placeholder:text-textMuted focus:outline-none focus:ring-0"
                       required
                     />
                   </div>
@@ -161,7 +161,7 @@ export default function Contact() {
                   <input
                     type="email"
                     placeholder="Email"
-                    className="w-full border-0 bg-transparent py-3 font-cormorant text-dark placeholder:text-taupe/70 focus:outline-none focus:ring-0"
+                    className="w-full border-0 bg-transparent py-3 font-montserrat font-medium text-textDark placeholder:font-montserrat placeholder:font-medium placeholder:text-textMuted focus:outline-none focus:ring-0"
                     required
                   />
                 </div>
@@ -169,12 +169,12 @@ export default function Contact() {
                   <input
                     type="tel"
                     placeholder="Phone"
-                    className="w-full border-0 bg-transparent py-3 font-cormorant text-dark placeholder:text-taupe/70 focus:outline-none focus:ring-0"
+                    className="w-full border-0 bg-transparent py-3 font-montserrat font-medium text-textDark placeholder:font-montserrat placeholder:font-medium placeholder:text-textMuted focus:outline-none focus:ring-0"
                   />
                 </div>
                 <div className="border-b border-gold/50 bg-transparent">
                   <select
-                    className="w-full border-0 bg-transparent py-3 font-cormorant text-dark focus:outline-none focus:ring-0 [&>option]:bg-cream"
+                    className="w-full border-0 bg-transparent py-3 font-montserrat font-medium text-textDark focus:outline-none focus:ring-0 [&>option]:bg-bgLight"
                     required
                   >
                     <option value="">Select Service</option>
@@ -189,7 +189,7 @@ export default function Contact() {
                   <textarea
                     placeholder="Project Brief"
                     rows={4}
-                    className="w-full resize-none border-0 bg-transparent py-3 font-cormorant text-dark placeholder:text-taupe/70 focus:outline-none focus:ring-0"
+                    className="w-full resize-none border-0 bg-transparent py-3 font-montserrat font-medium text-textDark placeholder:font-montserrat placeholder:font-medium placeholder:text-textMuted focus:outline-none focus:ring-0"
                     required
                   />
                 </div>
@@ -228,7 +228,7 @@ export default function Contact() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="block border-t border-gold/30 bg-white/90 px-4 py-3 font-montserrat text-xs text-taupe transition-colors hover:bg-white hover:text-gold hover:underline"
+          className="block border-t border-gold/30 bg-white/90 px-4 py-3 font-montserrat text-sm font-medium text-textBody transition-colors hover:bg-white hover:text-gold hover:underline"
         >
           Office No. 09, 3rd Floor, United Plaza, Fazl-e-Haq Road, Blue Area, Islamabad
         </a>

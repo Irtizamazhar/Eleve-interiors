@@ -8,7 +8,13 @@ import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands
 const floorings = ['SPC Flooring', 'Wooden Flooring', 'Vinyl Flooring', 'Sports Flooring', 'Kids EVA Flooring', 'Carpet Tiles', 'Artificial Grass'];
 const blinds = ['Roller Blinds', 'Vertical Blinds', 'Wooden Blinds', 'Venetian Blinds', 'Zebra Blinds', 'Chick Blinds'];
 const wallCoverings = ['PVC Wall Panels', 'Fluted Panels (WPC)', 'Acoustic Panels', 'PU Stone Panels', 'UV Marble Sheet'];
-const company = ['About', 'Services', 'Projects', 'Process', 'Contact'];
+const company = [
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Process', href: '/process' },
+  { name: 'Contact', href: '/contact' },
+];
 const servicesSub = ['Interior Design', 'Architectural Design', 'Retail Design', 'Residential Design'];
 
 export default function Footer() {
@@ -52,7 +58,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               {floorings.map((name) => (
                 <li key={name}>
-                  <Link href="#products" className="text-sm text-textBody transition-colors hover:text-gold">
+                  <Link href="/products#floorings" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>
@@ -66,7 +72,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               {blinds.map((name) => (
                 <li key={name}>
-                  <Link href="#products" className="text-sm text-textBody transition-colors hover:text-gold">
+                  <Link href="/products#window-blinds" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>
@@ -80,7 +86,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               {wallCoverings.map((name) => (
                 <li key={name}>
-                  <Link href="#products" className="text-sm text-textBody transition-colors hover:text-gold">
+                  <Link href="/products#wall-coverings" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>
@@ -92,10 +98,10 @@ export default function Footer() {
           <div>
             <h3 className="font-montserrat text-xs font-semibold uppercase tracking-[0.1em] text-gold">Company</h3>
             <ul className="mt-4 space-y-2">
-              {company.map((name) => (
-                <li key={name}>
-                  <Link href={`#${name.toLowerCase()}`} className="text-sm text-textBody transition-colors hover:text-gold">
-                    {name}
+              {company.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-sm text-textBody transition-colors hover:text-gold">
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -104,7 +110,7 @@ export default function Footer() {
             <ul className="mt-2 space-y-1">
               {servicesSub.map((name) => (
                 <li key={name}>
-                  <Link href="#services" className="text-sm text-textBody transition-colors hover:text-gold">
+                  <Link href="/services" className="text-sm text-textBody transition-colors hover:text-gold">
                     {name}
                   </Link>
                 </li>

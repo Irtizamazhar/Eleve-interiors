@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Products from '@/components/Products';
-import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import TrustedClients from '@/components/TrustedClients';
 import Projects from '@/components/Projects';
@@ -27,7 +26,6 @@ export default function Home() {
         <Hero />
         <About />
         <Products />
-        <Services />
         <WhyChooseUs />
         <TrustedClients />
         <Projects />

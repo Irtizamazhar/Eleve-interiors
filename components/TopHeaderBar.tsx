@@ -6,7 +6,7 @@ import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands
 
 export default function TopHeaderBar() {
   return (
-    <div className="bg-bgDark text-white" style={{ height: 40 }}>
+    <div className="hidden bg-bgDark text-white md:block" style={{ height: 40 }}>
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 md:px-6">
         <p className="hidden text-xs text-white/90 md:block">
           Mon – Sat 10:00 AM – 8:00 PM
@@ -17,7 +17,7 @@ export default function TopHeaderBar() {
         >
           Elevé Interiors — Islamabad
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a
             href="tel:+923343893891"
             className="hidden text-sm text-gold transition-colors hover:text-goldHover md:inline"
