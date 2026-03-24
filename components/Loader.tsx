@@ -28,7 +28,7 @@ export default function Loader() {
             transition={{ duration: 2, repeat: Infinity }}
             className="relative"
           >
-            <Logo variant="light" height={130} />
+            <Logo variant="light" height={170} />
           </motion.div>
 
           <motion.div
@@ -38,9 +38,6 @@ export default function Loader() {
             transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 0.3 }}
           />
 
-          <p className="mt-6 font-montserrat text-[10px] tracking-[6px] text-textBody" style={{ letterSpacing: '6px' }}>
-            Elevating your space
-          </p>
         </motion.div>
       )}
     </AnimatePresence>

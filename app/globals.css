@@ -7,10 +7,10 @@
   --bg-light: #f8f6f2;
   --bg-dark: #1a1a1a;
   --text-dark: #1a1a1a;
-  --text-body: #555555;
-  --text-muted: #999999;
-  --gold: #c9a84c;
-  --gold-hover: #b8962e;
+  --text-body: #3f3f3f;
+  --text-muted: #6f6f6f;
+  --gold: #9f7b2f;
+  --gold-hover: #886624;
   --border: #e5e0d5;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
@@ -34,6 +34,7 @@ html::-webkit-scrollbar {
 body {
   background-color: var(--white);
   color: var(--text-body);
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

@@ -30,7 +30,7 @@ export default function TrustedClients() {
                 key={`${name}-${i}`}
                 className="flex h-20 min-w-[180px] items-center justify-center rounded-lg border border-border bg-white px-8 py-4 transition-all duration-300 hover:scale-105 hover:border-gold hover:grayscale-0 grayscale"
               >
-                <span className="font-playfair text-lg font-semibold tracking-wide text-textMuted transition-colors hover:text-textDark">
+                <span className="font-playfair text-lg font-bold tracking-wide text-textBody transition-colors hover:text-textDark">
                   {name}
                 </span>
               </div>

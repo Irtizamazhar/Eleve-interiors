@@ -39,7 +39,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="font-montserrat text-xs uppercase tracking-[0.2em] text-gold"
+          className="font-montserrat text-xs font-semibold uppercase tracking-[0.2em] md:text-sm"
+          style={{ color: 'var(--gold)', textShadow: '0 1px 2px rgba(0,0,0,0.85), 0 0 14px rgba(0,0,0,0.55)' }}
         >
           INTERIOR DESIGN · ARCHITECTURE · CONSTRUCTION
         </motion.p>

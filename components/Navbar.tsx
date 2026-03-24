@@ -79,7 +79,7 @@ export default function Navbar() {
           <div className="hidden items-center gap-8 xl:flex">
             <Link
               href="/"
-              className="nav-link group relative font-medium text-[#333333] transition-colors hover:text-gold"
+              className="nav-link group relative font-medium text-textDark transition-colors hover:text-gold"
             >
               <span className="relative z-10">Home</span>
               <span className="absolute -bottom-1 left-0 z-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
@@ -92,7 +92,7 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="nav-link font-medium text-[#333333] transition-colors hover:text-gold"
+                className="nav-link font-medium text-textDark transition-colors hover:text-gold"
               >
                 <span className="relative">
                   Products
@@ -172,7 +172,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link group relative font-medium text-[#333333] transition-colors hover:text-gold"
+                className="nav-link group relative font-medium text-textDark transition-colors hover:text-gold"
               >
                 <span className="relative z-10">{link.label}</span>
                 <span className="absolute -bottom-1 left-0 z-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
