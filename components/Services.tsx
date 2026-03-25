@@ -18,6 +18,7 @@ import {
   faCity,
 } from '@fortawesome/free-solid-svg-icons';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const services = [
   {
@@ -27,7 +28,7 @@ const services = [
     desc: 'Complete architectural planning and structural design for residential and commercial projects.',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
     bullets: ['Concept plans and zoning strategy', 'Floor plans, elevations, and sections', 'Authority-ready drawing sets', 'Material and facade recommendations'],
-    price: 'Starting from PKR 180,000',
+    
     timeline: '6-12 weeks',
   },
   {
@@ -37,7 +38,6 @@ const services = [
     desc: 'Photorealistic renders and walkthroughs before construction begins.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     bullets: ['High-resolution interior/exterior renders', 'Lighting and mood simulation', 'Multiple camera views per area', 'Design revisions before final output'],
-    price: 'Starting from PKR 75,000',
     timeline: '1-3 weeks',
   },
   {
@@ -46,8 +46,7 @@ const services = [
     icon: faCouch,
     desc: 'Full-service design for homes, offices, cafes, restaurants, and retail spaces.',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80',
-    bullets: ['Space planning and concept themes', 'Furniture, color, and finish selection', 'Custom joinery and detailing', 'Site supervision and styling'],
-    price: 'Starting from PKR 120,000',
+    bullets: ['Space planning and concept themes', 'Furniture, color, and finish selection', 'Custom joinery and detailing', 'Site supervision and styling'],   
     timeline: '4-10 weeks',
   },
   {
@@ -57,7 +56,7 @@ const services = [
     desc: 'Brand-aligned retail environments that drive sales.',
     image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80',
     bullets: ['Customer journey and zoning layout', 'Display system and shelving strategy', 'Brand-focused lighting and signage', 'Cash counter and storage planning'],
-    price: 'Starting from PKR 160,000',
+   
     timeline: '4-8 weeks',
   },
   {
@@ -67,7 +66,7 @@ const services = [
     desc: 'Thoughtful renovations that modernise spaces while preserving character.',
     image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80',
     bullets: ['Demolition and reconstruction planning', 'MEP upgrades and layout improvements', 'Interior finishing and fit-outs', 'On-site quality and timeline management'],
-    price: 'Starting from PKR 220,000',
+   
     timeline: '6-16 weeks',
   },
   {
@@ -77,7 +76,7 @@ const services = [
     desc: 'Functional industrial interiors designed for efficiency and brand identity.',
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
     bullets: ['Workflow-led space planning', 'Durable material and finish selection', 'Safety-compliant design detailing', 'Operational lighting solutions'],
-    price: 'Starting from PKR 250,000',
+    
     timeline: '8-14 weeks',
   },
   {
@@ -87,7 +86,7 @@ const services = [
     desc: 'Atmospheric dining environments that keep guests coming back.',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
     bullets: ['Theme-based dining experience design', 'Kitchen and service flow planning', 'Lighting and acoustic treatment', 'Branding touchpoints and ambience styling'],
-    price: 'Starting from PKR 190,000',
+    
     timeline: '5-12 weeks',
   },
   {
@@ -97,7 +96,7 @@ const services = [
     desc: 'Outdoor spaces and gardens that complement your architecture beautifully.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     bullets: ['Garden zoning and softscape planning', 'Hardscape paths and seating layout', 'Lighting and irrigation concept', 'Plant palette based on climate'],
-    price: 'Starting from PKR 130,000',
+
     timeline: '3-8 weeks',
   },
   {
@@ -107,7 +106,7 @@ const services = [
     desc: 'Contemporary workplace design fostering productivity and culture.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
     bullets: ['Workstation and cabin planning', 'Meeting room and collaboration zones', 'Brand-integrated reception design', 'Ergonomic and acoustic optimization'],
-    price: 'Starting from PKR 170,000',
+
     timeline: '4-10 weeks',
   },
   {
@@ -117,7 +116,7 @@ const services = [
     desc: 'Expert shadow and light studies for optimal natural lighting in every space.',
     image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
     bullets: ['Sun path and shadow analysis', 'Daylight penetration studies', 'Window and opening optimization', 'Artificial + natural light balance'],
-    price: 'Starting from PKR 60,000',
+   
     timeline: '1-2 weeks',
   },
   {
@@ -127,7 +126,7 @@ const services = [
     desc: 'Personalised interiors crafted around your lifestyle and taste.',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
     bullets: ['Lifestyle-based space planning', 'Room-wise mood boards and themes', 'Material, furniture, and decor curation', 'Execution drawings and supervision'],
-    price: 'Starting from PKR 140,000',
+    
     timeline: '6-12 weeks',
   },
   {
@@ -137,7 +136,7 @@ const services = [
     desc: 'High-energy fast food interiors that maximise throughput and brand impact.',
     image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&q=80',
     bullets: ['Fast-turnover seating layouts', 'Counter and kitchen workflow setup', 'Durable easy-maintenance finishes', 'Signage and brand wall integration'],
-    price: 'Starting from PKR 155,000',
+
     timeline: '4-8 weeks',
   },
 ];
@@ -273,10 +272,6 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-5 flex items-center justify-between rounded-md border border-border bg-bgLight px-3 py-2">
-                    <p className="text-sm font-bold uppercase tracking-wide text-textDark">{s.price}</p>
-                    <p className="text-sm font-semibold uppercase tracking-wide text-gold">{s.timeline}</p>
-                  </div>
                   <div className="mt-5 flex items-center justify-between gap-3">
                     <Link
                       href="/contact"
@@ -346,6 +341,8 @@ export default function Services() {
           </div>
         </AnimateOnScroll>
       </div>
+
+      <FloatingWhatsApp />
     </section>
   );
 }

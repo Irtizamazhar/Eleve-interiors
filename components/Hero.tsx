@@ -1,24 +1,66 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollArrow from './ScrollArrow';
 
 const words = ['Spaces', 'That', 'Define', 'You'];
 
+function TypewriterWord({
+  text,
+  startDelayMs,
+  speedMs,
+  className = '',
+}: {
+  text: string;
+  startDelayMs: number;
+  speedMs: number;
+  className?: string;
+}) {
+  const [shown, setShown] = useState('');
+
+  useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
+
+    setShown('');
+    timeoutId = setTimeout(() => {
+      let i = 0;
+      intervalId = setInterval(() => {
+        i += 1;
+        setShown(text.slice(0, i));
+        if (i >= text.length && intervalId) clearInterval(intervalId);
+      }, speedMs);
+    }, startDelayMs);
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [text, startDelayMs, speedMs]);
+
+  return (
+    <span
+      className={className}
+      style={{ display: 'inline-block', minWidth: `${text.length}ch` }}
+    >
+      {shown}
+    </span>
+  );
+}
+
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-bgDark pt-32 md:pt-[160px]">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80"
-          alt="Luxury interior"
-          fill
-          className="object-cover transition-transform duration-700 hover:scale-105"
-          priority
-          sizes="100vw"
-          unoptimized
+        <video
+          className="h-full w-full object-cover"
+          src="/videos/hero-7578546.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
         <div
           className="absolute inset-0 z-[1]"
@@ -39,8 +81,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] sm:text-xs sm:tracking-[0.2em] md:text-sm"
-          style={{ color: 'var(--gold)', textShadow: '0 1px 2px rgba(0,0,0,0.85), 0 0 14px rgba(0,0,0,0.55)' }}
+          className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-white sm:text-xs sm:tracking-[0.2em] md:text-sm"
+          style={{ textShadow: '0 1px 2px rgba(0,0,0,0.85), 0 0 14px rgba(0,0,0,0.55)' }}
         >
           INTERIOR DESIGN · ARCHITECTURE · CONSTRUCTION
         </motion.p>
@@ -55,22 +97,13 @@ export default function Hero() {
           }}
         >
           {words.map((word, i) => (
-            <motion.span
+            <TypewriterWord
               key={word}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.6 + i * 0.12,
-                duration: 0.5,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-            >
-              {word === 'You' ? (
-                <span className="italic text-gold">{word}</span>
-              ) : (
-                word
-              )}
-            </motion.span>
+              text={word}
+              startDelayMs={600 + i * 140}
+              speedMs={55}
+              className={word === 'You' ? 'italic text-gold' : undefined}
+            />
           ))}
         </motion.h1>
         <motion.p
