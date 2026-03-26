@@ -36,7 +36,7 @@ const services = [
     name: '3D Visualization',
     icon: faCube,
     desc: 'Photorealistic renders and walkthroughs before construction begins.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    image: '/services/3d-visualization-1.png',
     bullets: ['High-resolution interior/exterior renders', 'Lighting and mood simulation', 'Multiple camera views per area', 'Design revisions before final output'],
     timeline: '1-3 weeks',
   },
@@ -74,7 +74,7 @@ const services = [
     name: 'Industrial Design',
     icon: faIndustry,
     desc: 'Functional industrial interiors designed for efficiency and brand identity.',
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80',
+    image: '/services/industrial-design-6.png',
     bullets: ['Workflow-led space planning', 'Durable material and finish selection', 'Safety-compliant design detailing', 'Operational lighting solutions'],
     
     timeline: '8-14 weeks',
@@ -94,7 +94,7 @@ const services = [
     name: 'Landscape Design',
     icon: faLeaf,
     desc: 'Outdoor spaces and gardens that complement your architecture beautifully.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    image: '/services/landscape-design-8.png',
     bullets: ['Garden zoning and softscape planning', 'Hardscape paths and seating layout', 'Lighting and irrigation concept', 'Plant palette based on climate'],
 
     timeline: '3-8 weeks',
@@ -142,7 +142,7 @@ const services = [
 ];
 
 const stats = [
-  { label: 'Projects Completed', value: 150, suffix: '+' },
+{ label: 'Projects Completed', value:   350, suffix: '+' },
   { label: 'Years Experience', value: 10, suffix: '+' },
   { label: 'Commercial Spaces', value: 50, suffix: '+' },
   { label: 'Client Satisfaction', value: 100, suffix: '%' },
@@ -224,7 +224,7 @@ export default function Services() {
         <AnimateOnScroll delay={0.05}>
           <div className="mt-8 rounded-md border border-gold/35 bg-gradient-to-r from-bgDark via-[#24201a] to-bgDark px-5 py-4 text-center">
             <p className="font-montserrat text-sm font-medium text-white/90 md:text-base">
-              We serve Islamabad, Rawalpindi, Lahore & across Pakistan — On-site consultations available.
+              We serve Islamabad, Rawalpindi, Lahore & Karachi  across Pakistan — On-site consultations available.
             </p>
           </div>
         </AnimateOnScroll>

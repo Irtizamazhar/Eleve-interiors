@@ -5,7 +5,13 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import ScrollArrow from './ScrollArrow';
 
-const words = ['Spaces', 'That', 'Define', 'You'];
+const words = ['Spaces','That','Define','You'];
+const heroLoopLines = [
+  'Crafting Luxury Interiors...',
+  'Transforming Your Spaces...',
+  'Designing Dream Homes...',
+  'Building Premium Offices...',
+];
 
 function TypewriterWord({
   text,
@@ -51,6 +57,34 @@ function TypewriterWord({
 }
 
 export default function Hero() {
+  const [lineIndex, setLineIndex] = useState(0);
+  const [typedLine, setTypedLine] = useState('');
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const fullLine = heroLoopLines[lineIndex];
+    const typeSpeed = deleting ? 40 : 70;
+
+    const timer = setTimeout(() => {
+      if (!deleting) {
+        const next = fullLine.slice(0, typedLine.length + 1);
+        setTypedLine(next);
+        if (next === fullLine) {
+          setTimeout(() => setDeleting(true), 1800);
+        }
+      } else {
+        const next = fullLine.slice(0, Math.max(typedLine.length - 1, 0));
+        setTypedLine(next);
+        if (next.length === 0) {
+          setDeleting(false);
+          setLineIndex((prev) => (prev + 1) % heroLoopLines.length);
+        }
+      }
+    }, typeSpeed);
+
+    return () => clearTimeout(timer);
+  }, [typedLine, deleting, lineIndex]);
+
   return (
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-bgDark pt-32 md:pt-[160px]">
       <div className="absolute inset-0 z-0">
@@ -90,7 +124,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-4 flex flex-wrap items-center justify-center gap-x-2 font-playfair text-white"
+          className="mt-4 flex flex-wrap items-center justify-center gap-x-1 font-playfair text-white sm:gap-x-1.5"
           style={{
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             lineHeight: 1.15,
@@ -112,7 +146,8 @@ export default function Hero() {
           transition={{ delay: 1.1 }}
           className="mt-4 font-cormorant text-lg text-white/80"
         >
-          Crafting environments that reflect your vision
+          {typedLine}
+          <span className="blink-cursor ml-0.5 text-[#C9A84C]">|</span>
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 24 }}

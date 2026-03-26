@@ -1,9 +1,24 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function FloatingWhatsApp() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const reveal = () => setShow(true);
+    if (document.readyState === 'complete') {
+      reveal();
+    } else {
+      window.addEventListener('load', reveal);
+      return () => window.removeEventListener('load', reveal);
+    }
+  }, []);
+
+  if (!show) return null;
+
   return (
     <a
       href="https://wa.me/923343893891"

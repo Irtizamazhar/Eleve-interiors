@@ -33,25 +33,26 @@ const projects = [
   {
     id: 3,
     src: '/projects/recent-work-3-main.png',
-    title: 'Fine Dining Space',
-    category: 'Restaurant Design',
-    gallery: ['/projects/recent-work-3-main.png'],
+    title: 'ARY News Defence Day Set 2018',
+    category: 'Residential Design',
+    gallery: ['/projects/recent-work-3-bedroom-2.png', '/projects/recent-work-3-bedroom-3.png'],
+    includeCardImageInPopup: true,
     preserveFullImage: true,
   },
   {
     id: 4,
-    src: '/projects/recent-work-4-main.png',
-    title: 'Premium Showroom',
-    category: 'Retail Design',
+    src: '/projects/recent-work-4-kitchen-2.png',
+    title: 'Kitchen Design',
+    category: 'Kitchen Design',
     gallery: ['/projects/recent-work-4-main.png'],
     preserveFullImage: true,
   },
   {
     id: 5,
-    src: '/projects/recent-work-5-main.png',
-    title: 'Artisan Cafe',
-    category: 'Cafe Design',
-    gallery: ['/projects/recent-work-5-main.png'],
+    src: '/projects/recent-work-5-bedroom-2.png',
+    title: 'Bed Room design',
+    category: 'Bed Room design',
+    gallery: ['/projects/recent-work-5-bedroom-2.png'],
     preserveFullImage: true,
   },
   {
@@ -166,7 +167,68 @@ const projects = [
       '/projects/recent-work-18-click-4.png',
     ],
   },
+  {
+    id: 19,
+    src: '/projects/recent-work-19-main.png',
+    title: 'Kitchen Design',
+    category: 'Kitchen Design',
+    gallery: ['/projects/recent-work-19-main.png'],
+    preserveFullImage: true,
+  },
+  {
+    id: 20,
+    src: '/projects/recent-work-20-main.png',
+    title: 'ARY NEWS Shan-e-ifart Ramzan SHOW Set Design 2017',
+    category: 'TV Show Set Design',
+    gallery: [
+      '/projects/recent-work-20-click-1.png',
+      '/projects/recent-work-20-click-2.png',
+      '/projects/recent-work-20-click-3.png',
+      '/projects/recent-work-20-click-4.png',
+    ],
+    preserveFullImage: true,
+  },
+  {
+    id: 21,
+    src: '/projects/recent-work-21-main.png',
+    title: 'Luxury Living Room Design',
+    category: 'Residential Design',
+    gallery: ['/projects/recent-work-21-click-1.png'],
+    preserveFullImage: true,
+  },
+  {
+    id: 23,
+    src: '/projects/recent-work-23-main.png',
+    title: 'Drawing Room Interior Design',
+    category: 'Residential Design',
+    gallery: ['/projects/recent-work-23-click-1.png'],
+    preserveFullImage: true,
+  },
+  {
+    id: 24,
+    src: '/projects/recent-work-24-main.png',
+    title: 'Garden Design',
+    category: 'Garden Design',
+    gallery: ['/projects/recent-work-24-click-1.png'],
+    preserveFullImage: true,
+  },
 ];
+
+function extractYear(title: string) {
+  const match = title.match(/\b(19|20)\d{2}\b/);
+  return match?.[0] ?? null;
+}
+
+function titleWithoutYear(title: string) {
+  const year = extractYear(title);
+  if (!year) return title;
+  return title.replace(year, '').trim();
+}
+
+function projectYear(title: string) {
+  // Agar title me year na ho to hum default year show kar dete hain
+  return extractYear(title) ?? '2024';
+}
 
 export default function Projects() {
   const [activeGallery, setActiveGallery] = useState<{ title: string; images: string[]; cropTop?: boolean } | null>(null);
@@ -205,10 +267,14 @@ export default function Projects() {
                   />
                 </div>
                 <div
-                  className="absolute inset-0 flex flex-col items-center justify-end bg-[rgba(201,168,76,0.88)] p-6 transition-transform duration-400 group-hover:translate-y-0"
-                  style={{ transform: 'translateY(100%)' }}
+                  className="absolute inset-0 flex translate-y-full flex-col items-center justify-end bg-[rgba(201,168,76,0.88)] p-6 transition-transform duration-400 group-hover:translate-y-0"
                 >
-                  <h3 className="font-playfair text-xl font-bold text-white">{p.title}</h3>
+                  <h3 className="font-playfair text-xl font-bold text-white">
+                    {titleWithoutYear(p.title)}
+                    <span className="ml-2 inline-block rounded bg-black/20 px-2 py-0.5 text-xs font-semibold text-white/95">
+                      {projectYear(p.title)}
+                    </span>
+                  </h3>
                   <p className="mt-1 text-sm text-white/80">{p.category}</p>
                   <span className="mt-3 inline-block rounded border-2 border-white px-4 py-2 font-montserrat text-xs font-medium uppercase text-white transition-colors group-hover:bg-white group-hover:text-textDark">
                     View Project →
@@ -224,7 +290,12 @@ export default function Projects() {
         <div className="fixed inset-0 z-[1200] flex items-center justify-center bg-black/75 p-4">
           <div className="w-full max-w-6xl rounded-card bg-white p-4 md:p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-playfair text-xl font-semibold text-textDark md:text-2xl">{activeGallery.title}</h3>
+              <h3 className="font-playfair text-xl font-semibold text-textDark md:text-2xl">
+                {titleWithoutYear(activeGallery.title)}
+                <span className="ml-3 inline-block rounded bg-gold/15 px-3 py-1 text-xs font-semibold text-gold">
+                  {projectYear(activeGallery.title)}
+                </span>
+              </h3>
               <button
                 type="button"
                 onClick={() => setActiveGallery(null)}

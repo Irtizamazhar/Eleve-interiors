@@ -27,7 +27,7 @@ export default function ScrollArrow() {
       style={{ pointerEvents: visible ? 'auto' : 'none' }}
     >
       <p
-        className="font-montserrat text-[8px] uppercase text-taupe"
+        className="font-montserrat text-[8px] uppercase text-white"
         style={{ letterSpacing: '5px' }}
       >
         Scroll Down
@@ -35,7 +35,7 @@ export default function ScrollArrow() {
       <motion.button
         type="button"
         onClick={scrollToAbout}
-        className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-gold text-gold transition-colors hover:bg-gold/20"
+        className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white/15"
         aria-label="Scroll to about section"
         animate={{ y: [0, 9, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

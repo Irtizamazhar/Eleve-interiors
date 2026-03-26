@@ -7,43 +7,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const productsMega = {
-  wallCoverings: {
-    title: 'Wall Coverings',
-    links: [
-      { label: 'PVC Wall Panels', href: '/products#wall-coverings' },
-      { label: 'Fluted Panels (WPC)', href: '/products#wall-coverings' },
-      { label: 'Acoustic Panels', href: '/products#wall-coverings' },
-      { label: 'PU Stone Panels', href: '/products#wall-coverings' },
-      { label: 'UV Marble Sheets', href: '/products#wall-coverings' },
-    ],
-  },
-  windowBlinds: {
-    title: 'Window Blinds',
-    links: [
-      { label: 'Roller Blinds', href: '/products#window-blinds' },
-      { label: 'Vertical Blinds', href: '/products#window-blinds' },
-      { label: 'Wooden Blinds', href: '/products#window-blinds' },
-      { label: 'Venetian Blinds', href: '/products#window-blinds' },
-      { label: 'Zebra Blinds', href: '/products#window-blinds' },
-      { label: 'Chick Blinds', href: '/products#window-blinds' },
-    ],
-  },
-  floorings: {
-    title: 'Floorings',
-    links: [
-      { label: 'SPC Flooring', href: '/products#floorings' },
-      { label: 'Wooden Flooring', href: '/products#floorings' },
-      { label: 'Vinyl Flooring', href: '/products#floorings' },
-      { label: 'Epoxy Flooring', href: '/products#floorings' },
-      { label: 'Artificial Grass', href: '/products#floorings' },
-      { label: 'Carpet Tiles', href: '/products#floorings' },
-      { label: 'Sports Flooring', href: '/products#floorings' },
-      { label: 'Gym Flooring', href: '/products#floorings' },
-    ],
-  },
-};
-
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
@@ -56,7 +19,6 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -89,89 +51,13 @@ export default function Navbar() {
               <span className="relative z-10">Home</span>
               <span className="absolute -bottom-1 left-0 z-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
             </Link>
-            {/* Products with mega-menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
+            <Link
+              href="/products"
+              className="nav-link group relative font-medium text-textDark transition-colors hover:text-gold"
             >
-              <button
-                type="button"
-                className="nav-link font-medium text-textDark transition-colors hover:text-gold"
-              >
-                <span className="relative">
-                  Products
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-                </span>
-              </button>
-              <AnimatePresence>
-                {productsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 top-full pt-2 -translate-x-1/2"
-                  >
-                    <div className="w-[680px] rounded-lg border border-border bg-white p-6 shadow-card-hover">
-                      <div className="grid grid-cols-3 gap-8">
-                        <div>
-                          <p className="mb-3 font-montserrat text-xs font-semibold uppercase tracking-wider text-gold">
-                            {productsMega.wallCoverings.title}
-                          </p>
-                          <ul className="space-y-2">
-                            {productsMega.wallCoverings.links.map((l) => (
-                              <li key={l.label}>
-                                <Link
-                                  href={l.href}
-                                  className="text-sm text-textDark transition-colors hover:text-gold"
-                                >
-                                  {l.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="mb-3 font-montserrat text-xs font-semibold uppercase tracking-wider text-gold">
-                            {productsMega.windowBlinds.title}
-                          </p>
-                          <ul className="space-y-2">
-                            {productsMega.windowBlinds.links.map((l) => (
-                              <li key={l.label}>
-                                <Link
-                                  href={l.href}
-                                  className="text-sm text-textDark transition-colors hover:text-gold"
-                                >
-                                  {l.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="mb-3 font-montserrat text-xs font-semibold uppercase tracking-wider text-gold">
-                            {productsMega.floorings.title}
-                          </p>
-                          <ul className="space-y-2">
-                            {productsMega.floorings.links.map((l) => (
-                              <li key={l.label}>
-                                <Link
-                                  href={l.href}
-                                  className="text-sm text-textDark transition-colors hover:text-gold"
-                                >
-                                  {l.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+              <span className="relative z-10">Products</span>
+              <span className="absolute -bottom-1 left-0 z-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+            </Link>
 
             {navLinks.map((link) => (
               <Link
