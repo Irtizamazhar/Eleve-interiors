@@ -19,6 +19,54 @@ const projects = [
     ],
   },
   {
+    id: 5,
+    src: '/projects/recent-work-5-bedroom-2.png',
+    title: 'Bed Room design',
+    category: 'Bed Room design',
+    gallery: ['/projects/recent-work-5-bedroom-2.png'],
+    preserveFullImage: true,
+    year: '2018',
+  },
+  {
+    id: 11,
+    src: '/projects/recent-work-11-main.png',
+    title: 'Executive Office Interior',
+    category: 'Commercial Interior',
+    gallery: ['/projects/recent-work-11-click.png'],
+    year: '2017',
+  },
+  {
+    id: 26,
+    src: '/projects/recent-work-call-center-main.png',
+    title: 'Call Center Interior Design',
+    category: 'Commercial Interior',
+    includeCardImageInPopup: false,
+    gallery: [
+      '/projects/recent-work-call-center-click-1.png',
+      '/projects/recent-work-call-center-click-2.png',
+      '/projects/recent-work-call-center-click-3.png',
+    ],
+    preserveFullImage: true,
+    year: '2019',
+  },
+  {
+    id: 4,
+    src: '/projects/recent-work-4-kitchen-2.png',
+    title: 'Kitchen Design',
+    category: 'Kitchen Design',
+    gallery: ['/projects/recent-work-4-main.png'],
+    preserveFullImage: true,
+    year: '2020',
+  },
+  {
+    id: 8,
+    src: '/projects/recent-work-8-main.png',
+    title: 'Modern Bedroom Interior',
+    category: 'Residential Design',
+    gallery: ['/projects/recent-work-8-click.png'],
+    year: '2016',
+  },
+  {
     id: 2,
     src: '/projects/recent-work-2-main.png',
     title: 'ARY Digital Shan-e-sahoor 2024',
@@ -29,6 +77,7 @@ const projects = [
       '/projects/recent-work-2-click-2.png',
       '/projects/recent-work-2-click-3.png',
     ],
+    year: '2019',
   },
   {
     id: 3,
@@ -38,22 +87,7 @@ const projects = [
     gallery: ['/projects/recent-work-3-bedroom-2.png', '/projects/recent-work-3-bedroom-3.png'],
     includeCardImageInPopup: true,
     preserveFullImage: true,
-  },
-  {
-    id: 4,
-    src: '/projects/recent-work-4-kitchen-2.png',
-    title: 'Kitchen Design',
-    category: 'Kitchen Design',
-    gallery: ['/projects/recent-work-4-main.png'],
-    preserveFullImage: true,
-  },
-  {
-    id: 5,
-    src: '/projects/recent-work-5-bedroom-2.png',
-    title: 'Bed Room design',
-    category: 'Bed Room design',
-    gallery: ['/projects/recent-work-5-bedroom-2.png'],
-    preserveFullImage: true,
+    year: '2018',
   },
   {
     id: 6,
@@ -61,6 +95,7 @@ const projects = [
     title: 'Garden Courtyard',
     category: 'Landscape Design',
     gallery: ['/projects/recent-work-6-click.png'],
+    year: '2017',
   },
   {
     id: 7,
@@ -68,20 +103,20 @@ const projects = [
     title: 'Modern Living Space',
     category: 'Residential Design',
     gallery: ['/projects/recent-work-7-click.png'],
+    year: '2020',
   },
   {
-    id: 8,
-    src: '/projects/recent-work-8-main.png',
-    title: 'Modern Bedroom Interior',
-    category: 'Residential Design',
-    gallery: ['/projects/recent-work-8-click.png'],
-  },
-  {
-    id: 9,
-    src: '/projects/recent-work-9-main.png',
-    title: 'Contemporary Living & Dining',
-    category: 'Residential Design',
-    gallery: ['/projects/recent-work-9-click.png'],
+    id: 25,
+    src: '/projects/recent-work-pavilion-asports-main.png',
+    title: 'Pavilion A-Sports',
+    category: 'TV Show Set Design',
+    includeCardImageInPopup: false,
+    gallery: [
+      '/projects/recent-work-pavilion-asports-click-1.png',
+      '/projects/recent-work-pavilion-asports-click-2.png',
+    ],
+    preserveFullImage: true,
+    year: '2016',
   },
   {
     id: 10,
@@ -92,13 +127,7 @@ const projects = [
       '/projects/recent-work-10-click-1.png',
       '/projects/recent-work-10-click-2.png',
     ],
-  },
-  {
-    id: 11,
-    src: '/projects/recent-work-11-main.png',
-    title: 'Executive Office Interior',
-    category: 'Commercial Interior',
-    gallery: ['/projects/recent-work-11-click.png'],
+    year: '2018',
   },
   {
     id: 12,
@@ -106,6 +135,7 @@ const projects = [
     title: 'Modern Bathroom Design',
     category: 'Residential Design',
     gallery: ['/projects/recent-work-12-main.png'],
+    year: '2019',
   },
   {
     id: 13,
@@ -117,6 +147,7 @@ const projects = [
       '/projects/recent-work-13-click-2.png',
       '/projects/recent-work-13-click-3.png',
     ],
+    year: '2017',
   },
   {
     id: 14,
@@ -124,6 +155,7 @@ const projects = [
     title: 'Bed Room Design (Day Light)',
     category: 'Residential Design',
     gallery: ['/projects/recent-work-14-click.png'],
+    year: '2020',
   },
   {
     id: 15,
@@ -135,6 +167,7 @@ const projects = [
       '/projects/recent-work-15-click-2.png',
       '/projects/recent-work-15-click-3.png',
     ],
+    year: '2016',
   },
   {
     id: 16,
@@ -147,6 +180,7 @@ const projects = [
       '/projects/recent-work-16-click-3.png',
       '/projects/recent-work-16-click-4.png',
     ],
+    year: '2019',
   },
   {
     id: 17,
@@ -154,6 +188,7 @@ const projects = [
     title: 'Restaurant Exterior Design',
     category: 'Restaurant Design',
     gallery: ['/projects/recent-work-17-main.png'],
+    year: '2018',
   },
   {
     id: 18,
@@ -166,6 +201,7 @@ const projects = [
       '/projects/recent-work-18-click-3.png',
       '/projects/recent-work-18-click-4.png',
     ],
+    year: '2017',
   },
   {
     id: 19,
@@ -174,6 +210,7 @@ const projects = [
     category: 'Kitchen Design',
     gallery: ['/projects/recent-work-19-main.png'],
     preserveFullImage: true,
+    year: '2020',
   },
   {
     id: 20,
@@ -187,6 +224,7 @@ const projects = [
       '/projects/recent-work-20-click-4.png',
     ],
     preserveFullImage: true,
+    year: '2017',
   },
   {
     id: 21,
@@ -195,6 +233,7 @@ const projects = [
     category: 'Residential Design',
     gallery: ['/projects/recent-work-21-click-1.png'],
     preserveFullImage: true,
+    year: '2016',
   },
   {
     id: 23,
@@ -203,6 +242,7 @@ const projects = [
     category: 'Residential Design',
     gallery: ['/projects/recent-work-23-click-1.png'],
     preserveFullImage: true,
+    year: '2019',
   },
   {
     id: 24,
@@ -211,6 +251,15 @@ const projects = [
     category: 'Garden Design',
     gallery: ['/projects/recent-work-24-click-1.png'],
     preserveFullImage: true,
+    year: '2018',
+  },
+  {
+    id: 9,
+    src: '/projects/recent-work-9-main.png',
+    title: 'Contemporary Living & Dining',
+    category: 'Residential Design',
+    gallery: ['/projects/recent-work-9-click.png'],
+    year: '2020',
   },
 ];
 
@@ -225,13 +274,18 @@ function titleWithoutYear(title: string) {
   return title.replace(year, '').trim();
 }
 
-function projectYear(title: string) {
-  // Agar title me year na ho to hum default year show kar dete hain
-  return extractYear(title) ?? '2024';
+function projectYearBadge(p: { id: number; title: string; year?: string }) {
+  if (p.id === 1) return extractYear(p.title) ?? '2024';
+  return p.year ?? extractYear(p.title) ?? '2024';
 }
 
 export default function Projects() {
-  const [activeGallery, setActiveGallery] = useState<{ title: string; images: string[]; cropTop?: boolean } | null>(null);
+  const [activeGallery, setActiveGallery] = useState<{
+    title: string;
+    images: string[];
+    cropTop?: boolean;
+    yearBadge: string;
+  } | null>(null);
 
   return (
     <section id="projects" className="bg-bgLight py-20 md:py-28">
@@ -252,7 +306,12 @@ export default function Projects() {
                   e.preventDefault();
                   const popupImages = p.includeCardImageInPopup === false ? p.gallery : [p.src, ...p.gallery];
                   const mergedImages = popupImages.filter((img, idx, arr) => arr.indexOf(img) === idx);
-                  setActiveGallery({ title: p.title, images: mergedImages, cropTop: p.id === 6 });
+                  setActiveGallery({
+                    title: p.title,
+                    images: mergedImages,
+                    cropTop: p.id === 6,
+                    yearBadge: projectYearBadge(p),
+                  });
                 }}
                 className="group relative block h-[280px] w-full overflow-hidden rounded-card transition-all duration-400 hover:-translate-y-1.5 hover:shadow-card-hover"
               >
@@ -272,7 +331,7 @@ export default function Projects() {
                   <h3 className="font-playfair text-xl font-bold text-white">
                     {titleWithoutYear(p.title)}
                     <span className="ml-2 inline-block rounded bg-black/20 px-2 py-0.5 text-xs font-semibold text-white/95">
-                      {projectYear(p.title)}
+                      {projectYearBadge(p)}
                     </span>
                   </h3>
                   <p className="mt-1 text-sm text-white/80">{p.category}</p>
@@ -293,7 +352,7 @@ export default function Projects() {
               <h3 className="font-playfair text-xl font-semibold text-textDark md:text-2xl">
                 {titleWithoutYear(activeGallery.title)}
                 <span className="ml-3 inline-block rounded bg-gold/15 px-3 py-1 text-xs font-semibold text-gold">
-                  {projectYear(activeGallery.title)}
+                  {activeGallery.yearBadge}
                 </span>
               </h3>
               <button

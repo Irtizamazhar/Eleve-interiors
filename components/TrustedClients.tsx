@@ -3,12 +3,11 @@
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 const brands = [
-  'Gul Ahmed',
-  'Bahria Town',
-  'Bank Islami',
-  'Aga Khan Foundation',
-  'The City School',
-  'Iqra University',
+  'Good Morning Pakistan',
+  'Pavilion A-Sports',
+  'ARY Digital',
+  'CodeXvalley',
+  'Mezzanine Restaurants',
 ];
 
 export default function TrustedClients() {

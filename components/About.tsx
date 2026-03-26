@@ -46,12 +46,12 @@ export default function About() {
             />
             <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
               <Image
-                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
-                alt="Elevé Interiors craftsmanship"
+                src="/about-craftsmanship.png"
+                alt="Premium interior design and craftsmanship"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                unoptimized
+                priority
               />
             </div>
             <div className="absolute -bottom-3 right-6 z-20 flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-gold bg-bgDark p-2 text-center shadow-lg md:-bottom-4 md:right-8 md:h-28 md:w-28">
