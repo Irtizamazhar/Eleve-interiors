@@ -10,9 +10,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import TrustedClients from '@/components/TrustedClients';
 import Projects from '@/components/Projects';
 import Process from '@/components/Process';
-import StatsCounter from '@/components/StatsCounter';
 import Awards from '@/components/Awards';
-import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
@@ -30,10 +28,10 @@ export default function Home() {
         <TrustedClients />
         <Projects />
         <Process />
-        <StatsCounter />
         <Awards />
-        <Testimonials />
-        <Contact />
+        <div id="home-contact">
+          <Contact />
+        </div>
         <Footer />
       </main>
       <FloatingWhatsApp />

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
 
 const projects = [
@@ -280,12 +282,22 @@ function projectYearBadge(p: { id: number; title: string; year?: string }) {
 }
 
 export default function Projects() {
+  const [searchQuery, setSearchQuery] = useState('');
   const [activeGallery, setActiveGallery] = useState<{
     title: string;
     images: string[];
     cropTop?: boolean;
     yearBadge: string;
   } | null>(null);
+  const filteredProjects = projects.filter((p) => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return true;
+    return (
+      p.title.toLowerCase().includes(query) ||
+      p.category.toLowerCase().includes(query) ||
+      titleWithoutYear(p.title).toLowerCase().includes(query)
+    );
+  });
 
   return (
     <section id="projects" className="bg-bgLight py-20 md:py-28">
@@ -296,8 +308,23 @@ export default function Projects() {
             We Produce the Finest Interior Solutions
           </h2>
         </AnimateOnScroll>
+        <AnimateOnScroll delay={0.05}>
+          <div className="relative mt-6 max-w-md">
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-textMuted"
+            />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search project..."
+              className="w-full rounded-md border border-border bg-white py-3 pl-10 pr-4 text-sm text-textDark outline-none transition-colors focus:border-gold"
+            />
+          </div>
+        </AnimateOnScroll>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => (
+          {filteredProjects.map((p, i) => (
             <AnimateOnScroll key={p.id} delay={i * 0.1}>
               <Link
                 href="#contact"
@@ -343,6 +370,9 @@ export default function Projects() {
             </AnimateOnScroll>
           ))}
         </div>
+        {filteredProjects.length === 0 && (
+          <p className="mt-8 text-sm text-textMuted">No project found for this search.</p>
+        )}
       </div>
 
       {activeGallery && (

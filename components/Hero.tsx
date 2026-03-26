@@ -49,7 +49,7 @@ function TypewriterWord({
   return (
     <span
       className={className}
-      style={{ display: 'inline-block', minWidth: `${text.length}ch` }}
+      style={{ display: 'inline-block' }}
     >
       {shown}
     </span>
@@ -124,10 +124,10 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-4 flex flex-wrap items-center justify-center gap-x-1 font-playfair text-white sm:gap-x-1.5"
+          className="mt-4 flex flex-wrap items-center justify-center gap-x-0.5 font-playfair text-white sm:gap-x-1"
           style={{
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
-            lineHeight: 1.15,
+            lineHeight: 1.08,
           }}
         >
           {words.map((word, i) => (

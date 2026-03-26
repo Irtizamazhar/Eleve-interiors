@@ -6,14 +6,15 @@ const brands = [
   'Good Morning Pakistan',
   'Pavilion A-Sports',
   'ARY Digital',
-  'CodeXvalley',
+
   'Mezzanine Restaurants',
+  'Code Valley Office',
 ];
 
 export default function TrustedClients() {
   const duplicated = [...brands, ...brands];
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-8 md:py-12">
       <div className="mx-auto max-w-7xl px-6">
         <AnimateOnScroll delay={0}>
           <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.2em] text-gold">HUGE HONOR</p>

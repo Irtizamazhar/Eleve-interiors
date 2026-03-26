@@ -31,7 +31,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-bgLight py-20 md:py-28">
+    <section className="bg-bgLight py-14 md:py-20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <AnimateOnScroll direction="left" delay={0}>
           <p className="font-montserrat text-xs font-semibold uppercase tracking-[0.2em] text-gold">BEST IN THE INDUSTRY</p>

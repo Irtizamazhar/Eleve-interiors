@@ -87,7 +87,7 @@ export default function About() {
             </div>
             <Link
               href="#contact"
-              className="mt-8 inline-block rounded-md bg-gold px-6 py-3 font-montserrat text-sm font-medium text-white transition-all duration-300 hover:bg-goldHover hover:scale-[1.03]"
+              className="mt-8 inline-flex w-fit items-center justify-center rounded-md bg-gold px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-goldHover hover:scale-[1.03]"
             >
               Get in Touch
             </Link>

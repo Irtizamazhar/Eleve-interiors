@@ -2,7 +2,7 @@
 
 import TopHeaderBar from '@/components/TopHeaderBar';
 import Navbar from '@/components/Navbar';
-import About from '@/components/About';
+import AboutShowcase from '@/components/AboutShowcase';
 import Footer from '@/components/Footer';
 
 export default function AboutPage() {
@@ -10,8 +10,8 @@ export default function AboutPage() {
     <>
       <TopHeaderBar />
       <Navbar />
-      <main className="pt-28 md:pt-40">
-        <About />
+      <main className="pt-20 md:pt-28">
+        <AboutShowcase />
       </main>
       <Footer />
     </>

@@ -10,7 +10,7 @@ export default function ServicesPage() {
     <>
       <TopHeaderBar />
       <Navbar />
-      <main className="pt-28 md:pt-40">
+      <main className="pt-16 md:pt-24">
         <Services />
       </main>
       <Footer />
