@@ -394,11 +394,11 @@ export default function Projects() {
                 ×
               </button>
             </div>
-            <div className="max-h-[72vh] space-y-4 overflow-y-auto pr-1">
+            <div className="max-h-[72vh] space-y-2 overflow-y-auto pr-1 md:space-y-4">
               {activeGallery.images.map((img, idx) => (
                 <div
                   key={img}
-                  className="relative h-[52vh] min-h-[280px] w-full overflow-hidden rounded md:h-[56vh] md:min-h-[360px]"
+                  className="relative aspect-[4/3] w-full overflow-hidden rounded md:h-[56vh] md:min-h-[360px] md:aspect-auto"
                 >
                   <Image
                     src={img}
